@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tachkila</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <header class="bg-[#1E293B] text-white lg:grid lg:grid-cols-3 lg:h-20">
-      <div>
-        <img src="" alt="" />
-        <div class="m-5">
-          <h3>TACHKILA</h3>
-          <p class="text-gray-400 text-xs">ATLAS FC</p>
-        </div>
-      </div>
-      <nav class="bg-[#0F172A] rounded-2xl">
-        <ul class="grid grid-cols-3">
-          <li><a href="index.html" class="m-5 bg-green-600 rounded-2xl">Effectif</a></li>
-          <li><a href="composition.html" class="m-5">Composition</a></li>
-          <li><a href="matchs.html" class="m-5">Matchs</a></li>
-        </ul>
-      </nav>
-      <div>
-        <div class="flex gap-2 justify-center items-center">
-          <div class="w-2 h-2 bg-yellow-300 rounded-full"></div>
-          <p class="text-yellow-300 mr-5">GB</p>
-          <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
-          <p class="text-blue-600 mr-5">DEF</p>
-          <div class="w-2 h-2 bg-green-600 rounded-full"></div>
-          <p class="text-green-600 mr-5">MIL</p>
-          <div class="w-2 h-2 bg-red-600 rounded-full"></div>
-          <p class="text-red-600 mr-5">ATT</p>
-        </div>
-      </div>
-    </header>
-    <main class="bg-slate-900 min-h-screen ">
-        <div class=" text-white m-5">
-            <div class="flex justify-between m-3">
-          <p>effectif</p>
-          <div class="bg-gray-500 rounded-2xl">
-            <div id="playersn" class="text-left lg;h-2">0 joueur(s)</div>
-          </div>
-        </div>
-        </div>
-        <div class="text-white lg:flex lg:items-center border border-white rounded-2xl bg-slate-700 m-4 ">
-            <div class="m-1 lg:flex-1 lg:justify-start max-sm:w-full">
-                <input type="text" class="lg:w-full bg-slate-900 placeholder-gray-400 border border-white rounded-2xl p-5 m-2" placeholder="Recherche un joueur par nom...">
+    <header
+        class="bg-[#1E293B] text-white min-h-20 px-6 py-3 grid grid-cols-1 items-center gap-4  lg:grid lg:grid-cols-3 lg:h-20 ">
+        <div>
+            <div><img src="" alt="" /></div>
+
+            <div >
+                <h1 class="text-lg font-medium">TACHKILA</h1>
+                <p class="text-gray-400 text-xs">ATLAS FC</p>
             </div>
-            <div class="flex flex-row lg:items-center lg:shrink-0 border border-white bg-slate-900 rounded-2xl m-2 w-60">
+        </div>
+
+        <nav class="bg-slate-800 border border-slate-700 rounded-[20px] p-1.5 w-full">
+            <ul class="grid grid-cols-3 items-center text-center">
+                <li><a href="index.html" class="inline-block bg-green-600 rounded-full px-3 py-1">Effectif</a></li>
+                <li><a href="composition.html" class="inline-block px-3 py-1 rounded-full hover:bg-slate-800 transition">Composition</a></li>
+                <li><a href="matchs.html" class="inline-block px-3 py-1 rounded-full hover:bg-slate-800 transition">Matchs</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <div class="flex gap-2 justify-center items-center">
+                <div class="w-2 h-2 bg-yellow-300 rounded-full"></div>
+                <p class="text-yellow-300 mr-5">GB</p>
+                <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                <p class="text-blue-600 mr-5">DEF</p>
+                <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+                <p class="text-green-600 mr-5">MIL</p>
+                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <p class="text-red-600 mr-5">ATT</p>
+            </div>
+        </div>
+    </header>
+    <main class="bg-slate-900 min-h-screen">
+        <div class=" text-white p-5">
+            <div class="flex justify-between ">
+                <p>effectif</p>
+                <div class="bg-gray-500 rounded-2xl">
+                    <div id="playersn" class="text-left lg;h-2">0 joueur(s)</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-white lg:flex lg:items-center border border-white rounded-2xl bg-slate-800 m-4 ">
+            <div class="m-1 lg:flex-1 lg:justify-start max-sm:w-full">
+                <input type="text"
+                    class="lg:w-full bg-slate-900 placeholder-gray-400 border border-white rounded-2xl p-5 m-2"
+                    placeholder="Recherche un joueur par nom...">
+            </div>
+            <div
+                class="flex flex-row lg:items-center lg:shrink-0 border border-white bg-slate-900 rounded-2xl m-2 w-60">
                 <button class="m-2 bg-green-600 rounded-2xl p-3">Tous</button>
                 <button class="m-2">GB</button>
                 <button class="m-2">DEF</button>
@@ -56,6 +65,8 @@
                 <button class="m-2">ATT</button>
             </div>
         </div>
+        <div></div>
     </main>
 </body>
+
 </html>
