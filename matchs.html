@@ -61,15 +61,19 @@
       </div>
     </header>
     <main class="bg-slate-900 min-h-screen p-5">
-        <div class=" text-white p-5">
-            <div class="flex justify-between ">
-                <h1>Matchs</h1>
-            </div>
+      <div class="text-white p-5">
+        <div class="flex justify-between">
+          <h1>Matchs</h1>
         </div>
-        <div>
-            <button id="Ajouter-matchs" class=" text-white bg-[#22C55E] text-center max-sm:w-85  rounded-2xl p-2 m-2 lg:flex lg:ml-auto lg:justify-end">+Ajouter un
-                match</button>
-        </div>
+      </div>
+      <div>
+        <button
+          id="Ajoutermatchs"
+          class="text-white bg-[#22C55E] text-center max-sm:w-80 mb-5 rounded-2xl p-2 lg:flex lg:ml-auto lg:justify-end"
+        >
+          +Ajouter un match
+        </button>
+      </div>
       <div
         class="text-white lg:flex lg:items-center border border-slate-700 rounded-2xl bg-slate-800 p-2"
       >
@@ -118,7 +122,9 @@
               <div class="lg:hidden flex flex-col justify-center items-center">
                 <h1 class="text-green-500">3-1</h1>
                 <p>victiore</p>
-                <a href="composition.html" class="bg-slate-700 p-1 rounded-2xl m-1"
+                <a
+                  href="composition.html"
+                  class="bg-slate-700 p-1 rounded-2xl m-1"
                   >voir la composition</a
                 >
                 <div class="flex flex-row ml-auto justify-end">
@@ -149,5 +155,103 @@
         </article>
       </div>
     </main>
+    <div
+      id="overlaymatch"
+      class="flex justify-center w-full h-full bg-[rgba(0,0,0,0.5)] fixed inset-0 overflow-y-auto overflow-x-hidden fixed z-500 p-2 hidden"
+    >
+      <div
+        id="popupmatch"
+        class="bg-[#1E293B] rounded-2xl relative lg:w-100 h-150 flex-row text-start max-sm:justify-center max-sm:items-center mt-10"
+      >
+        <div class="flex justify-between">
+          <p class="text-white font-bold m-5">Ajouter un match</p>
+          <button class="text-gray-400 m-4" id="Xmatch">X</button>
+        </div>
+        <div class="flex flex-col">
+          <label for="player" class="text-gray-400 m-1.5">Adversaire</label>
+          <input
+            id="adversaire"
+            name="adversaire"
+            type="text"
+            class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3"
+          />
+          <p id="errormatch" class="text-red-400 text-1xl m-1"></p>
+        </div>
+
+        <div class="flex flex-col">
+          <label for="text" class="text-gray-400 m-1.5">lieu</label>
+          <input
+            type="text"
+            id="lieu"
+            name="lieu"
+            class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3"
+          />
+          <p id="errormatch" class="text-red-400 text-1xl m-1"></p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-gray-400">
+            <div class="flex flex-col m-1">
+                <label for="number" >Date</label>
+            <input
+            type="number"
+            id="date"
+            name="date"
+            class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white "
+          />
+            </div>
+            <div>
+                <label for="number">heure</label>
+            <input
+            type="number"
+            id="heure"
+            name="heure"
+            class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white "
+          />
+            </div>
+        </div>
+        <div id="local" class="grid grid-cols-2 gap-5 m-5">
+          <label
+            id="in"
+            class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-green-500"
+          >
+            <input
+              type="radio"
+              name="position"
+              value="in"
+              class="appearance-none"/>
+            Domicile
+          </label>
+
+          <label
+            id="out"
+            class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-green-500"
+          >
+            <input
+              type="radio"
+              name="position"
+              value="out"
+              class="appearance-none"
+            />
+            Extérieur
+          </label>
+        </div>
+        <div class="flex justify-end">
+          <button
+            id="Annulermatch"
+            class="text-white bg-gray-500 rounded-2xl p-2 m-3"
+          >
+            Annuler
+          </button>
+          <button
+            type="submitmatch"
+            id="confirm"
+            class="bg-green-600 rounded-2xl p-2 m-3 text-white"
+          >
+            Ajouter
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="interface.js" defer></script>
+  <script src="joueurs.js" defer></script>
 </html>
