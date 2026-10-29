@@ -73,7 +73,79 @@
         <div >
         </div>
     </main>
-    
+    <div id="bgblur"
+        class="flex justify-center w-full h-full bg-[rgba(0,0,0,0.5)] fixed inset-0 overflow-y-auto overflow-x-hidden fixed z-500 p-2">
+        <div id="popup" class="bg-[#1E293B] rounded-2xl relative lg:w-100 h-180 flex-row text-start max-sm:justify-center max-sm:items-center mt-10">
+            <div class="flex justify-between">
+                <p class="text-white font-bold m-5 ">Ajouter un joueur</p>
+                <button class="text-gray-400  m-4" id="X">X</button>
+            </div>
+            <div class="flex flex-col">
+                <label for="player" class="text-gray-400 m-1.5">nom complet</label>
+                <input id="player" name="player" type="text" placeholder="nom du joueur"
+                    class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3">
+                <p id="error" class="text-red-400 text-1xl m-1"></p>
+            </div>
+            <p class="text-gray-400 m-1.5">poste</p>
+
+            <div id="poste" class="grid grid-cols-2 gap-5 m-5">
+
+                <label id="Gardien"
+                    class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-yellow-500">
+                    <input type="radio" name="position" value="Gardien" class="appearance-none">
+                    <div class="w-2 h-2 bg-yellow-300 rounded-full"></div>
+                    Gardien
+                </label>
+
+                <label id="Défenseur"
+                    class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-blue-500">
+                    <input type="radio" name="position" value="Défenseur" class=" appearance-none">
+                    <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    Défenseur
+                </label>
+
+                <label
+                    class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-green-500">
+                    <input type="radio" name="position" value="Milieu" class="appearance-none">
+                    <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+                    Milieu
+                </label>
+
+                <label
+                    class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-red-500">
+                    <input type="radio" name="position" value="Attaquant" class="appearance-none">
+                    <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                    Attaquant
+                </label>
+
+            </div>
+            <p id="errorr" class="text-red-400 text-1xl m-1"></p>
+
+            <div class="flex flex-col">
+                <label for="number" class="text-gray-400 m-1.5">numéro(1 à 99)</label>
+                <input type="number" min="1" max="99" id="number" name="number" placeholder="numero"
+                    class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3">
+                <p id="errorn" class="text-red-400 text-1xl m-1 "></p>
+            </div>
+            <div class="flex flex-row">
+                <div class="flex flex-col ">
+                    <label for="number" class="text-gray-400 m-1.5">àge</label>
+                    <input type="number" name="number" id="number" min="19" max="39" class="m-1.5 text-white bg-slate-900 rounded-2xl p-2">
+                </div>
+                <div class="flex flex-col">
+                    <label for="text" class="text-gray-400 m-1.5">status</label>
+                    <select name="text" id="status" class="m-1.5 bg-slate-900 rounded-2xl p-2 text-white">
+                        <option value="enforme" >En forme</option>
+                        <option value="blessé" >blessé</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <button id="Annuler" class="text-white bg-gray-500 rounded-2xl p-2 m-3">Annuler</button>
+                <button type="submit" id="confirm" class="bg-green-600 rounded-2xl p-2 m-3 text-white">Ajouter</button>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="joueurs.js" defer></script>
 </html>
