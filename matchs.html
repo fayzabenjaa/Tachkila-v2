@@ -1,58 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tachkila</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header
-        class="bg-[#1E293B] text-white min-h-20 px-6 py-3 grid grid-cols-1 items-center gap-4  lg:grid lg:grid-cols-3 lg:h-20 ">
-        <div>
-            <div><img src="" alt="" /></div>
-
-            <div >
-                <h1 class="text-lg font-medium">TACHKILA</h1>
-                <p class="text-gray-400 text-xs">ATLAS FC</p>
-            </div>
-        </div>
-
-        <nav class="bg-slate-800 border border-slate-700 rounded-2xl p-1.5 w-[25em]">
-            <ul class="grid grid-cols-3 items-center text-center">
-                <li><a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color">Effectif</a></li>
-                <li><a href="composition.html" class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color">Composition</a></li>
-                <li><a href="matchs.html" class=" block bg-green-600 text-white font-semibold  rounded-xl px-4 py-3">Matchs</a></li>
-            </ul>
-        </nav>
+      class="bg-[#1E293B] text-white min-h-20 px-6 py-3 grid grid-cols-1 items-center gap-4 lg:grid lg:grid-cols-3 lg:h-20"
+    >
+      <div>
+        <div><img src="" alt="" /></div>
 
         <div>
-            <div class="flex gap-2 justify-center items-center">
-                <div class="w-2 h-2 bg-yellow-300 rounded-full"></div>
-                <p class="text-yellow-300 mr-5">GB</p>
-                <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
-                <p class="text-blue-600 mr-5">DEF</p>
-                <div class="w-2 h-2 bg-green-600 rounded-full"></div>
-                <p class="text-green-600 mr-5">MIL</p>
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
-                <p class="text-red-600 mr-5">ATT</p>
-            </div>
+          <h1 class="text-lg font-medium">TACHKILA</h1>
+          <p class="text-gray-400 text-xs">ATLAS FC</p>
         </div>
+      </div>
+
+      <nav
+        class="bg-slate-800 border border-slate-700 rounded-2xl p-1.5 lg:w-[25em]"
+      >
+        <ul class="grid grid-cols-3 items-center text-center">
+          <li>
+            <a
+              href="index.html"
+              class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color"
+              >Effectif</a
+            >
+          </li>
+          <li>
+            <a
+              href="composition.html"
+              class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color"
+              >Composition</a
+            >
+          </li>
+          <li>
+            <a
+              href="matchs.html"
+              class="block bg-green-600 text-white font-semibold rounded-xl px-4 py-3"
+              >Matchs</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div>
+        <div class="flex gap-2 justify-center items-center">
+          <div class="w-2 h-2 bg-yellow-300 rounded-full"></div>
+          <p class="text-yellow-300 mr-5">GB</p>
+          <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+          <p class="text-blue-600 mr-5">DEF</p>
+          <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+          <p class="text-green-600 mr-5">MIL</p>
+          <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+          <p class="text-red-600 mr-5">ATT</p>
+        </div>
+      </div>
     </header>
     <main class="bg-slate-900 min-h-screen p-5">
-        <div class="text-white lg:flex lg:items-center border border-slate-700 rounded-2xl bg-slate-800 p-2">
-            <div
-                class="flex flex-row lg:items-center lg:shrink-0 border border-slate-700 bg-slate-900 rounded-2xl w-[20em]">
-                <button class="m-2 bg-green-600 rounded-2xl p-3">Tous</button>
-                <button class="m-2">à venir</button>
-                <button class="m-2">joués</button>
-            </div>
-            <div class="m-1 lg:flex-1 lg:justify-start max-sm:w-full ">
-                <input type="text"
-                    class="lg:w-full bg-slate-900 placeholder-gray-400 border border-slate-700 rounded-2xl p-5 "
-                    placeholder="Recherche un adversaire...">
-            </div>
+      <div
+        class="text-white lg:flex lg:items-center border border-slate-700 rounded-2xl bg-slate-800 p-2"
+      >
+        <div
+          class="flex flex-row max-sm:justify-center items-center lg:shrink-0 border border-slate-700 bg-slate-900 rounded-2xl lg:w-[20em] max-sm:hidden"
+        >
+          <button class="m-2 bg-green-600 rounded-2xl p-3">Tous</button>
+          <button class="m-2">à venir</button>
+          <button class="m-2">joués</button>
         </div>
+        <div class="m-1 lg:flex-1 lg:justify-start max-sm:w-full">
+          <input
+            type="text"
+            class="w-full bg-slate-900 placeholder-gray-400 border border-slate-700 rounded-2xl p-5"
+            placeholder="Recherche un adversaire..."
+          />
+        </div>
+        <div
+          class="flex flex-row max-sm:justify-center items-center lg:shrink-0 border border-slate-700 bg-slate-900 rounded-2xl lg:w-[20em] lg:hidden"
+        >
+          <button class="m-2 bg-green-600 rounded-2xl p-3">Tous</button>
+          <button class="m-2">à venir</button>
+          <button class="m-2">joués</button>
+        </div>
+      </div>
+      <div
+        class="flex m-1 bg-slate-800 border-slate-700 rounded-2xl mt-4 text-white"
+      >
+        <article class="flex justify-start">
+          <div
+            class="m-5 flex flex-col justify-center items-center bg-slate-900 p-3 rounded-2xl text-gray-400"
+          >
+            <p>SAM</p>
+            <p class="text-white">10</p>
+            <p>oct</p>
+            <p>15:00</p>
+          </div>
+          <div
+            class="text-gray-400 m-2 lg:m-10 flex flex-col lg:justify-center"
+          >
+            <p>Domicile</p>
+            <h2 class="text-white">Atlas FC vs Union oasis</h2>
+            <div class="flex flex-col">
+              <img src="" alt="" />
+              <p>stade Municipal oasis</p>
+              <div class="lg:hidden flex flex-col justify-center items-center">
+                <h1 class="text-green-500">3-1</h1>
+                <p>victiore</p>
+                <a href="composition.html" class="bg-slate-700 p-1 rounded-2xl m-1"
+                  >voir la composition</a
+                >
+                <div class="flex flex-row ml-auto justify-end">
+                  <button class="bg-slate-900 p-1 rounded-2xl m-1">edit</button>
+                  <button class="bg-slate-900 p-1 rounded-2xl m-1">
+                    delet
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="flex ml-auto justify-end">
+          <div class="max-sm:hidden">
+            <div class="flex flex-row m-5">
+              <h1 class="text-green-500 font-bold text-4x1">3 - 1</h1>
+              <p>victiore</p>
+              <p>modifier le score</p>
+            </div>
+            <a href="composition.html" class="bg-slate-700 p-1 rounded-2xl"
+              >voir la composition</a
+            >
+          </div>
+          <div class="max-sm:hidden flex justify-center items-center">
+            <button class="bg-slate-900 p-2 rounded-2xl m-5">edit</button>
+            <button class="bg-slate-900 p-2 rounded-2xl m-5">delet</button>
+          </div>
+        </article>
+      </div>
     </main>
-</body>
+  </body>
 </html>
