@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tachkila</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
     <header
-        class="bg-[#1E293B] text-white min-h-20 px-6 py-3 grid grid-cols-1 items-center gap-4  lg:grid lg:grid-cols-3 lg:h-20 ">
+        class="bg-[#1E293B] text-white min-h-20 px-6 py-3 grid grid-cols-1 items-center gap-4 lg:grid lg:grid-cols-3 lg:h-20">
         <div>
             <div><img src="" alt="" /></div>
 
-            <div >
+            <div>
                 <h1 class="text-lg font-medium">TACHKILA</h1>
                 <p class="text-gray-400 text-xs">ATLAS FC</p>
             </div>
@@ -22,9 +22,18 @@
 
         <nav class="bg-slate-800 border border-slate-700 rounded-2xl p-1.5 lg:w-[25em]">
             <ul class="grid grid-cols-3 items-center text-center">
-                <li><a href="index.html" class="block bg-green-600 text-white font-semibold  rounded-xl px-4 py-3">Effectif</a></li>
-                <li><a href="composition.html" class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color">Composition</a></li>
-                <li><a href="matchs.html" class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color">Matchs</a></li>
+                <li>
+                    <a href="index.html"
+                        class="block bg-green-600 text-white font-semibold rounded-xl px-4 py-3">Effectif</a>
+                </li>
+                <li>
+                    <a href="composition.html"
+                        class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color">Composition</a>
+                </li>
+                <li>
+                    <a href="matchs.html"
+                        class="block px-4 py-3 rounded-xl hover:bg-slate-700 transition-color">Matchs</a>
+                </li>
             </ul>
         </nav>
 
@@ -42,8 +51,8 @@
         </div>
     </header>
     <main class="bg-slate-900 min-h-screen">
-        <div class=" text-white p-5">
-            <div class="flex justify-between ">
+        <div class="text-white p-5">
+            <div class="flex justify-between">
                 <h1>Effectif</h1>
                 <div class="bg-slate-800 rounded-2xl">
                     <div id="playersn" class="text-left p-2">0 joueur(s)</div>
@@ -52,145 +61,113 @@
             <p class="text-gray-400">Gérez les joueurs du club Atlas FC.</p>
         </div>
         <div>
-            <button id="Ajouter" class=" text-white bg-[#22C55E] text-center max-sm:w-85  rounded-2xl p-2 m-2 lg:flex lg:ml-auto lg:justify-end">+Ajouter un
-                joueur</button>
+            <button id="Ajouter"
+                class="text-white bg-[#22C55E] text-center max-sm:w-85 rounded-2xl p-2 m-2 lg:flex lg:ml-auto lg:justify-end">
+                +Ajouter un joueur
+            </button>
         </div>
-        <div class="text-white lg:flex lg:items-center border border-slate-700 rounded-2xl bg-slate-800 m-4 ">
+        <div class="text-white lg:flex lg:items-center border border-slate-700 rounded-2xl bg-slate-800 m-4">
             <div class="lg:m-1 lg:flex-1 lg:justify-start max-sm:w-full">
                 <input type="text"
-                    class="w-full bg-slate-900 placeholder-gray-400 border border-slate-700 rounded-2xl p-5 lg:m-2 "
-                    placeholder="Recherche un joueur par nom...">
+                    class="w-full bg-slate-900 placeholder-gray-400 border border-slate-700 rounded-2xl p-5 lg:m-2"
+                    placeholder="Recherche un joueur par nom..." />
             </div>
             <div
-                class="flex flex-row justify-center items-center lg:shrink-0 border border-slate-700 bg-slate-900 rounded-2xl m-2 lg:w-60 ">
-                <button class="m-2 bg-green-600 rounded-2xl p-3">Tous</button>
-                <button class="m-2">GB</button>
-                <button class="m-2">DEF</button>
-                <button class="m-2">MIL</button>
-                <button class="m-2">ATT</button>
+                class="flex flex-row justify-center items-center lg:shrink-0 border border-slate-700 bg-slate-900 rounded-2xl m-2 lg:w-60">
+                <button id="allplayers" class="m-2 max-sm:p-2 p-1 rounded-2xl">
+                    Tous
+                </button>
+                <button id="allgb" class="m-2 max-sm:p-2 p-1 rounded-2xl">GB</button>
+                <button id="alldef" class="m-2 max-sm:p-2 p-1 rounded-2xl">
+                    DEF
+                </button>
+                <button id="allmil" class="m-2 max-sm:p-2 p-1 rounded-2xl">
+                    MIL
+                </button>
+                <button id="allatt" class="m-2 max-sm:p-2 p-1 rounded-2xl">
+                    ATT
+                </button>
             </div>
         </div>
-        <section class="lg:grid lg:grid-cols-4 gap-1 max-sm:grid max-sm:grid-cols-2">
-            <article class="bg-slate-800 rounded-2xl m-2 ">
-                <div class="flex">
-                    <div class="flex gap-2 justify-start">
-                        <div>
-                            <p class="text-yellow-500 flex justify-center items-center w-10 h-10  rounded-full border-2 border-yellow-500 font-bold m-2">1</p>
-                        </div>
-                        <div>
-                            <p class="text-white">Yassine Amrani</p>
-                            <p class="bg-[#111827] rounded-2xl p-1 w-10 flex justify-center text-yellow-300">GB</p>
-                        </div>
-                    </div>
-                <button class="text-white border border-slate-700 rounded-2xl w-10 ml-auto justify-end m-2">C</button>
-                </div>
-                <p class="text-gray-400 p-2">àge : 29 ans</p>
-                <div class="lg:grid lg:grid-cols-2 m-2">
-                    <p class="bg-[#0B2926] text-green-500 rounded-2xl p-2 w-20">En forme</p>
-                    <div class="text-gray-400 flex lg:gap-5 justify-end max-sm:gap-2 ">
-                        <button class="border border-slate-700 rounded-2xl p-1.5">edit</button>
-                        <button class="border border-slate-700 rounded-2xl p-1.5">delet</button>
-                    </div>
-                </div>
-            </article>
-            <article class="bg-slate-800 rounded-2xl m-2">
-                <div class="flex">
-                    <div class="flex gap-2 justify-start">
-                        <div>
-                            <p class="text-blue-500 flex justify-center items-center w-10 h-10  rounded-full border-2 border-blue-500 font-bold m-2">2</p>
-                        </div>
-                        <div>
-                            <p class="text-white">Reda el alami</p>
-                            <p class="bg-[#101F3D] rounded-2xl p-1 w-10 flex justify-center text-blue-300">DRF</p>
-                        </div>
-                    </div>
-                <button class="text-white border border-slate-700 rounded-2xl w-10 ml-auto justify-end m-2">C</button>
-                </div>
-                <p class="text-gray-400 p-2">àge : 22 ans</p>
-                <div class="lg:grid lg:grid-cols-2 m-2">
-                    <p class="bg-[#0B2926] text-green-500 rounded-2xl p-2 w-20">En forme</p>
-                    <div class="text-gray-400 flex lg:gap-5 justify-end max-sm:gap-2 ">
-                        <button class="border border-slate-700 rounded-2xl p-1.5">edit</button>
-                        <button class="border border-slate-700 rounded-2xl p-1.5">delet</button>
-                    </div>
-                </div>
-            </article>
+        <section id="player-card" class="lg:grid lg:grid-cols-4 gap-1 max-sm:grid max-sm:grid-cols-2">
             
         </section>
-        
-        
     </main>
     <div id="bgblur"
         class="flex justify-center w-full h-full bg-[rgba(0,0,0,0.5)] fixed inset-0 overflow-y-auto overflow-x-hidden fixed z-500 p-2 hidden">
-        <div id="popup" class="bg-[#1E293B] rounded-2xl relative lg:w-100 h-180 flex-row text-start max-sm:justify-center max-sm:items-center mt-10">
+        <div id="popup"
+            class="bg-[#1E293B] rounded-2xl relative lg:w-100 h-180 flex-row text-start max-sm:justify-center max-sm:items-center mt-10">
             <div class="flex justify-between">
-                <p class="text-white font-bold m-5 ">Ajouter un joueur</p>
-                <button class="text-gray-400  m-4" id="X">X</button>
+                <p class="text-white font-bold m-5">Ajouter un joueur</p>
+                <button class="text-gray-400 m-4" id="X">X</button>
             </div>
             <div class="flex flex-col">
                 <label for="player" class="text-gray-400 m-1.5">nom complet</label>
                 <input id="player" name="player" type="text" placeholder="nom du joueur"
-                    class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3">
+                    class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3" />
                 <p id="error" class="text-red-400 text-1xl m-1"></p>
             </div>
             <p class="text-gray-400 m-1.5">poste</p>
 
             <div id="poste" class="grid grid-cols-2 gap-5 m-5">
-
                 <label id="Gardien"
                     class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-yellow-500">
-                    <input type="radio" name="position" value="Gardien" class="appearance-none">
+                    <input type="radio" name="position" value="Gardien" class="appearance-none" />
                     <div class="w-2 h-2 bg-yellow-300 rounded-full"></div>
                     Gardien
                 </label>
 
                 <label id="Défenseur"
                     class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-blue-500">
-                    <input type="radio" name="position" value="Défenseur" class=" appearance-none">
+                    <input type="radio" name="position" value="Défenseur" class="appearance-none" />
                     <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                     Défenseur
                 </label>
 
                 <label
                     class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-green-500">
-                    <input type="radio" name="position" value="Milieu" class="appearance-none">
+                    <input type="radio" name="position" value="Milieu" class="appearance-none" />
                     <div class="w-2 h-2 bg-green-600 rounded-full"></div>
                     Milieu
                 </label>
 
                 <label
                     class="bg-[#0F172A] rounded-2xl text-white flex justify-center p-4 gap-2 items-center cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-red-500">
-                    <input type="radio" name="position" value="Attaquant" class="appearance-none">
+                    <input type="radio" name="position" value="Attaquant" class="appearance-none" />
                     <div class="w-2 h-2 bg-red-600 rounded-full"></div>
                     Attaquant
                 </label>
-
             </div>
             <p id="errorr" class="text-red-400 text-1xl m-1"></p>
 
             <div class="flex flex-col">
                 <label for="number" class="text-gray-400 m-1.5">numéro(1 à 99)</label>
                 <input type="number" min="1" max="99" id="number" name="number" placeholder="numero"
-                    class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3">
-                <p id="errorn" class="text-red-400 text-1xl m-1 "></p>
+                    class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3" />
+                <p id="errorn" class="text-red-400 text-1xl m-1"></p>
             </div>
             <div class="grid grid-cols-2">
                 <div class="flex flex-col">
                     <label for="number" class="text-gray-400 m-1.5">àge</label>
-                    <input type="number" name="number" id="agenumber" min="19" max="39" class="m-1.5 text-white bg-slate-900 rounded-2xl p-2">
-                    <p id="ageerror" class="text-red-400 text-1xl m-1 "></p>
+                    <input type="number" name="number" id="agenumber" min="19" max="39"
+                        class="m-1.5 text-white bg-slate-900 rounded-2xl p-2" />
+                    <p id="ageerror" class="text-red-400 text-1xl m-1"></p>
                 </div>
                 <div class="flex flex-col">
                     <label for="text" class="text-gray-400 m-1.5">status</label>
                     <select name="text" id="status" class="m-1.5 bg-slate-900 rounded-2xl p-2 text-white">
-                        <option value="enforme" >En forme</option>
-                        <option value="blessé" >blessé</option>
+                        <option value="enforme">En forme</option>
+                        <option value="blessé">blessé</option>
                     </select>
                 </div>
             </div>
             <div class="flex justify-end">
-                <button id="Annuler" class="text-white bg-gray-500 rounded-2xl p-2 m-3">Annuler</button>
-                <button type="submit" id="confirm" class="bg-green-600 rounded-2xl p-2 m-3 text-white">Ajouter</button>
+                <button id="Annuler" class="text-white bg-gray-500 rounded-2xl p-2 m-3">
+                    Annuler
+                </button>
+                <button type="submit" id="confirm" class="bg-green-600 rounded-2xl p-2 m-3 text-white">
+                    Ajouter
+                </button>
             </div>
         </div>
     </div>
@@ -198,4 +175,5 @@
 <script type="module" src="interface.js" defer></script>
 <script type="module" src="joueurs.js" defer></script>
 <script type="module" src="validation.js" defer></script>
+
 </html>
