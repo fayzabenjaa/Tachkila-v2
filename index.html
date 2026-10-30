@@ -42,7 +42,7 @@
         </div>
     </header>
     <main class="bg-slate-900 min-h-screen">
-        <section class=" text-white p-5">
+        <div class=" text-white p-5">
             <div class="flex justify-between ">
                 <h1>Effectif</h1>
                 <div class="bg-slate-800 rounded-2xl">
@@ -69,9 +69,9 @@
                 <button class="m-2">MIL</button>
                 <button class="m-2">ATT</button>
             </div>
-        </section>
+        </div>
         <section class="lg:grid lg:grid-cols-4 gap-1 max-sm:grid max-sm:grid-cols-2">
-            <article class="bg-slate-800 rounded-2xl m-2 border border-purple-500">
+            <article class="bg-slate-800 rounded-2xl m-2 ">
                 <div class="flex">
                     <div class="flex gap-2 justify-start">
                         <div>
@@ -82,7 +82,7 @@
                             <p class="bg-[#111827] rounded-2xl p-1 w-10 flex justify-center text-yellow-300">GB</p>
                         </div>
                     </div>
-                <button class="text-white bg-purple-500 rounded-2xl w-10 ml-auto justify-end m-2">C</button>
+                <button class="text-white border border-slate-700 rounded-2xl w-10 ml-auto justify-end m-2">C</button>
                 </div>
                 <p class="text-gray-400 p-2">àge : 29 ans</p>
                 <div class="lg:grid lg:grid-cols-2 m-2">
@@ -177,7 +177,8 @@
             <div class="grid grid-cols-2">
                 <div class="flex flex-col">
                     <label for="number" class="text-gray-400 m-1.5">àge</label>
-                    <input type="number" name="number" id="number" min="19" max="39" class="m-1.5 text-white bg-slate-900 rounded-2xl p-2">
+                    <input type="number" name="number" id="agenumber" min="19" max="39" class="m-1.5 text-white bg-slate-900 rounded-2xl p-2">
+                    <p id="ageerror" class="text-red-400 text-1xl m-1 "></p>
                 </div>
                 <div class="flex flex-col">
                     <label for="text" class="text-gray-400 m-1.5">status</label>
@@ -194,6 +195,7 @@
         </div>
     </div>
 </body>
-<script src="interface.js" defer></script>
-<script src="joueurs.js" defer></script>
+<script type="module" src="interface.js" defer></script>
+<script type="module" src="joueurs.js" defer></script>
+<script type="module" src="validation.js" defer></script>
 </html>
