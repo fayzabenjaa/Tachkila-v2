@@ -1,7 +1,7 @@
 
 const playerbtn = document.querySelector('#confirm')
 
-function validation () {
+export function validation () {
     const player = document.querySelector('#player');
 const number = document.querySelector('#number');
 const age = document.querySelector('#agenumber');
@@ -69,5 +69,5 @@ if (playernumber == "" && playername == "") {
     overlay.classList.add("hidden");
   }
 }
-playerbtn.addEventListener('click', validation);
+
 

@@ -1,23 +1,4 @@
-const openbtn = document.querySelector("#Ajouter");
-const popup = document.querySelector("#popup");
-const overlay = document.querySelector("#bgblur");
-const closebtn = document.querySelector("#X");
-const Annuler = document.querySelector("#Annuler");
-
-function openpopup() {
-  overlay.classList.remove("hidden");
-}
-function closepopup() {
-  overlay.classList.add("hidden");
-}
-function Annulerpopup() {
-  overlay.classList.add("hidden");
-}
-
-openbtn.addEventListener("click", openpopup);
-closebtn.addEventListener("click", closepopup);
-Annuler.addEventListener("click", Annulerpopup);
-
+const playerbtn = document.querySelector('#confirm');
 
 function playercard() {
   const playerCard = document.querySelector("#player-card");
@@ -352,3 +333,6 @@ function playercard() {
   });
   updateplayernumber();
 }
+
+import { validation } from "./validation.js";
+playerbtn.addEventListener('click', validation)
