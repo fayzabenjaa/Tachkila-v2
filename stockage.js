@@ -1,5 +1,7 @@
-let inputArray = JSON.parse(localStorage.getItem("players")) || [];
 
+function userPlayers(){
+    return JSON.parse(localStorage.getItem("players")) || [];
+}
 function savePlayer() {
   localStorage.setItem("players", JSON.stringify(inputArray));
 }
