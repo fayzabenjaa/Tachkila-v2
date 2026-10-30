@@ -175,9 +175,28 @@
             type="text"
             class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3"
           />
-          <p id="errormatch" class="text-red-400 text-1xl m-1"></p>
+          <p id="errorAdversaire" class="text-red-400 text-1xl m-1"></p>
         </div>
-
+        <div class="grid grid-cols-2 gap-2 text-gray-400">
+            <div class="flex flex-col m-1">
+                <label for="number" class="m-2">Date</label>
+            <input
+            type="date"
+            id="date"
+            name="date"
+            class="bg-[#0F172A] rounded-2xl p-4  text-white flex justify-center items-center w-45 h-12"
+          />
+            </div>
+            <div class="flex flex-col ">
+                <label for="number" class="m-2">heure</label>
+            <input
+            type="time"
+            id="heure"
+            name="heure"
+            class="bg-[#0F172A] rounded-2xl p-4 mr-2 text-white flex justify-center items-center w-45 h-12"
+          />
+            </div>
+        </div>
         <div class="flex flex-col">
           <label for="text" class="text-gray-400 m-1.5">lieu</label>
           <input
@@ -186,28 +205,9 @@
             name="lieu"
             class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3"
           />
-          <p id="errormatch" class="text-red-400 text-1xl m-1"></p>
+          <p id="errorlieu" class="text-red-400 text-1xl m-1"></p>
         </div>
-        <div class="grid grid-cols-2 gap-2 text-gray-400">
-            <div class="flex flex-col m-1">
-                <label for="number" >Date</label>
-            <input
-            type="number"
-            id="date"
-            name="date"
-            class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white "
-          />
-            </div>
-            <div>
-                <label for="number">heure</label>
-            <input
-            type="number"
-            id="heure"
-            name="heure"
-            class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white "
-          />
-            </div>
-        </div>
+        <p class="text-gray-400 m-2">lieu du match</p>
         <div id="local" class="grid grid-cols-2 gap-5 m-5">
           <label
             id="in"
