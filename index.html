@@ -45,8 +45,8 @@
         <div class=" text-white p-5">
             <div class="flex justify-between ">
                 <h1>Effectif</h1>
-                <div class="bg-gray-500 rounded-2xl">
-                    <div id="playersn" class="text-left lg;h-2">0 joueur(s)</div>
+                <div class="bg-slate-800 rounded-2xl">
+                    <div id="playersn" class="text-left p-2">0 joueur(s)</div>
                 </div>
             </div>
             <p class="text-gray-400">Gérez les joueurs du club Atlas FC.</p>
@@ -70,11 +70,10 @@
                 <button class="m-2">ATT</button>
             </div>
         </div>
-        <div >
-        </div>
+        
     </main>
     <div id="bgblur"
-        class="flex justify-center w-full h-full bg-[rgba(0,0,0,0.5)] fixed inset-0 overflow-y-auto overflow-x-hidden fixed z-500 p-2">
+        class="flex justify-center w-full h-full bg-[rgba(0,0,0,0.5)] fixed inset-0 overflow-y-auto overflow-x-hidden fixed z-500 p-2 hidden">
         <div id="popup" class="bg-[#1E293B] rounded-2xl relative lg:w-100 h-180 flex-row text-start max-sm:justify-center max-sm:items-center mt-10">
             <div class="flex justify-between">
                 <p class="text-white font-bold m-5 ">Ajouter un joueur</p>
@@ -127,8 +126,8 @@
                     class="bg-[#0F172A] rounded-2xl p-4 ml-3 text-white m-3">
                 <p id="errorn" class="text-red-400 text-1xl m-1 "></p>
             </div>
-            <div class="flex flex-row">
-                <div class="flex flex-col ">
+            <div class="grid grid-cols-2">
+                <div class="flex flex-col">
                     <label for="number" class="text-gray-400 m-1.5">àge</label>
                     <input type="number" name="number" id="number" min="19" max="39" class="m-1.5 text-white bg-slate-900 rounded-2xl p-2">
                 </div>
@@ -147,5 +146,6 @@
         </div>
     </div>
 </body>
+<script src="interface.js" defer></script>
 <script src="joueurs.js" defer></script>
 </html>
