@@ -336,3 +336,57 @@ function playercard() {
 
 import { validation } from "./validation.js";
 playerbtn.addEventListener('click', validation)
+
+const Ajouterbtn = document.querySelector('#Ajouter');
+Ajouterbtn.addEventListener('click', playercard)
+
+//recherch filtre
+const allplayers = document.querySelector('#allplayers');
+const allgb = document.querySelector('#allgb');
+const alldef = document.querySelector('#alldef');
+const allmil = document.querySelector('#allmil');
+const allatt = document.querySelector('#allatt');
+
+function allplayersf () {
+    allplayers.classList.add('bg-green-600');
+    allgb.classList.remove('bg-green-600');
+    alldef.classList.remove('bg-green-600');
+    allmil.classList.remove('bg-green-600');
+    allatt.classList.remove('bg-green-600');
+}
+function allgbf () {
+    allplayers.classList.remove('bg-green-600');
+    allgb.classList.add('bg-green-600');
+    alldef.classList.remove('bg-green-600');
+    allmil.classList.remove('bg-green-600');
+    allatt.classList.remove('bg-green-600');
+}
+function alldeff () {
+    allplayers.classList.remove('bg-green-600');
+    allgb.classList.remove('bg-green-600');
+    alldef.classList.add('bg-green-600');
+    allmil.classList.remove('bg-green-600');
+    allatt.classList.remove('bg-green-600');
+}
+function allmilf () {
+    allplayers.classList.remove('bg-green-600');
+    allgb.classList.remove('bg-green-600');
+    alldef.classList.remove('bg-green-600');
+    allmil.classList.add('bg-green-600');
+    allatt.classList.remove('bg-green-600');
+}
+function allattf () {
+    allplayers.classList.remove('bg-green-600');
+    allgb.classList.remove('bg-green-600');
+    alldef.classList.remove('bg-green-600');
+    allmil.classList.remove('bg-green-600');
+    allatt.classList.add('bg-green-600');
+}
+
+allplayers.addEventListener('click', allplayersf);
+allgb.addEventListener('click', allgbf);
+alldef.addEventListener('click', alldeff);
+allmil.addEventListener('click', allmilf);
+allatt.addEventListener('click', allattf);
+
+
