@@ -1,7 +1,7 @@
 
-function userPlayers(){
+export function userPlayers(){
     return JSON.parse(localStorage.getItem("players")) || [];
 }
-function savePlayer() {
+export function savePlayer(inputArray) {
   localStorage.setItem("players", JSON.stringify(inputArray));
 }
