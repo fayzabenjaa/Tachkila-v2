@@ -12,22 +12,22 @@ export function playerCard() {
   const roles = {
     Gardien: {
       short: "GB",
-      color: "yellow",
+      color: "yellow-500",
       bg: "bg-[#111827]",
     },
     Défenseur: {
       short: "DEF",
-      color: "blue",
+      color: "blue-500",
       bg: "bg-[#101F3D]",
     },
     Milieu: {
       short: "MIL",
-      color: "green",
+      color: "green-500",
       bg: "bg-[#0B2926]",
     },
     Attaquant: {
       short: "ATT",
-      color: "red",
+      color: "red-500",
       bg: "bg-[#3B1717]",
     },
   };
@@ -56,13 +56,13 @@ export function playerCard() {
                         </div>
                         <div>
                             <p class="text-white">${player.name}</p>
-                            <p class="${role.bg} rounded-2xl p-1 w-10 flex justify-center text-${role.color}-300">
+                            <p class="${role.bg} rounded-2xl p-1 w-10 flex justify-center text-${role.color}">
                                 ${role.short}
                             </p>
                         </div>
                     </div>
                     <button data-id="${player.id}"
-                        class="status-btn ${player.captain ? "bg-yellow-500 text-black" : "text-white"} border border-slate-700 rounded-2xl w-10 ml-auto m-2">
+                        class="status-btn ${player.captain ? "bg-purple-600 text-white" : "text-white"} border border-slate-700 rounded-2xl w-10 ml-auto m-2">
                         C
                     </button>
                 </div>
