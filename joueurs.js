@@ -104,19 +104,34 @@ function deletplayer() {
 }
 //edit button
 let indexedit = null;
-  const editName = document.querySelector("#editplayer");
-  const editNumber = document.querySelector("#editnumber");
 function editplayer() {
   document.querySelectorAll(".edit-btn").forEach((btn) => {
     btn.addEventListener("click", function () {
+
       document.querySelector("#bgblur").classList.remove("hidden");
-      const editconfirm = document.querySelector("#confirm");
-      editconfirm.textContent = "Enregistre";
-      const editid = Number(this.dataset.id);
-      indexedit = editid;
-        const selectedplayer = inputArray.find((player) => player.id == editid);
-        editName.value = selectedplayer.name;
-        editNumber.value = selectedplayer.number;
+
+      const editConfirm = document.querySelector("#confirm");
+      editConfirm.textContent = "Enregistre";
+
+      const editId = Number(this.dataset.id);
+
+      const selectedplayer = inputArray.find((player) => player.id == editId);
+
+      const player = document.querySelector('#player');
+      const number = document.querySelector('#number');
+
+        player.value = selectedplayer.nom;
+        number.value = selectedplayer.number;
+
+        indexedit = editId;
+
+        const newPlayer = player.value;
+            const newNumber = number.value;
+            console.log(inputArray)
+        editConfirm.addEventListener('click', (event)=> {
+            event.preventDefault();
+            
+        })
     });
   });
 }
@@ -210,5 +225,15 @@ allgb.addEventListener("click", allgbf);
 alldef.addEventListener("click", alldeff);
 allmil.addEventListener("click", allmilf);
 allatt.addEventListener("click", allattf);
+
+const search = document.querySelector("#search");
+
+search.addEventListener('input', ()=> {
+    const recherche = search.value.toLowerCase();
+    const results = inputArray.filter((player)=> {
+        return player.name.toLowerCase().includes(recherche);
+    })
+    playerCard(results);
+})
 
 playerCard();
