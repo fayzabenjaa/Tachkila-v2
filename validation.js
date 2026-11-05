@@ -107,6 +107,8 @@ const heureinput = document.querySelector('heure');
 const lieuinput = document.querySelector('#lieu');
 const localinput = document.querySelector('local');
 
+import { matchCard } from './matchs.js'
+
 function validationmatch () {
   const errorAdversaire = document.querySelector('#errorAdversaire');
   const errorDate = document.querySelector('#errorDate');
@@ -127,6 +129,9 @@ function validationmatch () {
   const heure = heureinput.value;
   const lieu = lieuinput.value;
   const local = document.querySelector('input[name="position"]:checked');
+
+  const matchCard = document.querySelector('#match-card');
+  matchCard.innerHTML = ``;
   
   if (!adversaire) {
     errorAdversaire.innerText = "entrez l'adversaire";
@@ -156,5 +161,14 @@ function validationmatch () {
     errorLocation.innerText = "entrez le lieu"
     return;
   }
+  const match = {
+    id: matchs.length,
+    adversaire: adversaire,
+    date: date,
+    heure: heure,
+    lieu: lieu,
+    local: local,
+  }
+  matchs.push(match)
 }
 
