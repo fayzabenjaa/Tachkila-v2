@@ -1,6 +1,6 @@
 import { matchCard } from './matchs.js'
 
-const submitmatch = document.querySelector('#submitmatch');
+const submitmatch = document.querySelector('#confirm');
 
 
 function validationmatch () {
