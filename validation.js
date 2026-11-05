@@ -96,4 +96,65 @@ function validation() {
 
 }
 
-playerbtn.addEventListener("click", validation)
+playerbtn.addEventListener("click", validation).Attaquant
+
+//matchs
+const submitmatch = document.querySelector('#submitmatch');
+
+const adversaireinput = document.querySelector('#adversaire');
+const dateinput = document.querySelector('#date');
+const heureinput = document.querySelector('heure');
+const lieuinput = document.querySelector('#lieu');
+const localinput = document.querySelector('local');
+
+function validationmatch () {
+  const errorAdversaire = document.querySelector('#errorAdversaire');
+  const errorDate = document.querySelector('#errorDate');
+  const errorHeure = document.querySelector('#errorHeure');
+  const errorlieu = document.querySelector('#errorlieu');
+  const errorLocation = document.querySelector('#errorLocation');
+
+  errorAdversaire.innerText = "";
+  errorDate.innerText = "";
+  errorHeure.innerText = "";
+  errorlieu.innerText = "";
+  errorLocation.innerText = "";
+
+  const matchs = [];
+
+  const adversaire = adversaireinput.value;
+  const date = dateinput.value;
+  const heure = heureinput.value;
+  const lieu = lieuinput.value;
+  const local = document.querySelector('input[name="position"]:checked');
+  
+  if (!adversaire) {
+    errorAdversaire.innerText = "entrez l'adversaire";
+    return;
+  }
+  if (!/^[a-zA-Z]+$/.test(adversaire)) {
+    errorAdversaire.innerText = "Nom invalide";
+    return;
+  }
+  if (!date) {
+    errorDate.innerText = "entrez la date";
+    return;
+  }
+  if (!heure) {
+    errorHeure.innerText = "entrez la date";
+    return;
+  }
+  if (!lieu) {
+    errorlieu.innerText = "entrez le lieu"
+    return;
+  }
+  if (!/^[a-zA-Z]+$/.test(lieu)) {
+    errorlieu.innerText = "lieu invalide";
+    return;
+  }
+  if (!errorLocation){
+    errorLocation.innerText = "entrez le lieu"
+    return;
+  }
+}
+
