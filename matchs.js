@@ -30,20 +30,19 @@ export function matchCard () {
             <p>SAM</p>
             <p class="text-white font-bold">10</p>
             <p>oct</p>
-            <p>${match.heure}</p>
+            <p>${heure}</p>
           </div>
           <div
             class="text-gray-400 m-2 lg:m-10 flex flex-col lg:justify-center"
           >
-            <p>${match.local}</p>
-            <h2 class="text-white font-bold">Atlas FC vs ${match.adversaire}</h2>
+            <p>${local}</p>
+            <h2 class="text-white font-bold">Atlas FC vs ${adversaire}</h2>
             <div class="flex flex-col">
               <img src="" alt="" />
-              <p>stade ${match.lieu}</p>
+              <p>stade ${lieu}</p>
 
               <div class="lg:hidden flex flex-col justify-center items-center">
-                <h1 class="text-green-500 font-bold">3-1</h1>
-                <p>victiore</p>
+                <button class="matchScore text-white m-1 bg-blue-600 rounded-2xl p-2">Saisir le score</button>
                 <a
                   href="composition.html"
                   class="bg-slate-700 p-1 rounded-2xl m-1"
@@ -62,15 +61,11 @@ export function matchCard () {
           </div>
         </article>
         <article class="flex ml-auto justify-end">
-          <div class="max-sm:hidden">
-            <div class="grid grid-cols-2">
-                <h1 class="text-green-500 font-bold text-4x1">3 - 1</h1>
-            <div class="flex flex-row m-5 gap-5">
-              <p>victiore</p>
-              <p>modifier le score</p>
+          <div class="max-sm:hidden flex flex-col justify-center gap-4 items-center">
+            <div>
+              <button id="matchScore" class="bg-blue-600 rounded-2xl p-2">Saisir le score</button>
             </div>
-            </div>
-            <a href="composition.html" class="bg-slate-700 p-1 rounded-2xl"
+            <a href="composition.html" class="bg-slate-700 p-2 rounded-2xl"
               >voir la composition</a
             >
           </div>
