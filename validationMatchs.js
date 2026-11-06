@@ -1,7 +1,6 @@
 import { matchCard } from "./matchs.js";
 
 const submitmatch = document.querySelector("#confirm");
-let matchs = [];
 
 const errorAdversaire = document.querySelector("#errorAdversaire");
 const errorDate = document.querySelector("#errorDate");
@@ -14,7 +13,7 @@ function validationmatch() {
   const date = document.querySelector("#date").value;
   const heure = document.querySelector("#heure").value;
   const lieu = document.querySelector("#lieu").value;
-  const local = document.querySelector('input[name="position"]:checked');
+  const local = document.querySelector('input[name="position"]:checked')?.value;
 
   errorAdversaire.innerText = "";
   errorDate.innerText = "";
@@ -46,32 +45,23 @@ function validationmatch() {
     errorlieu.innerText = "lieu invalide";
     return;
   }
-  if (!errorLocation) {
+  if (!local) {
     errorLocation.innerText = "entrez le lieu";
     return;
   }
-  const match = {
-    id: matchs.length,
-    adversaire: adversaire,
-    date: date,
-    heure: heure,
-    lieu: lieu,
-    local: local,
-  };
-  matchs.push(match);
 
-  document.querySelector("#adversaire").value = "";
+  matchCard();
+
+    const overlaymatch = document.querySelector("#overlaymatch");
+  overlaymatch.classList.add("hidden");
+
+    document.querySelector("#adversaire").value = "";
   document.querySelector("#date").value = "";
   document.querySelector("#heure").value = "";
   document.querySelector("#lieu").value = "";
-  //   document.querySelector('input[name="position"]:checked') = "";
-
-  const overlaymatch = document.querySelector("#overlaymatch");
-  overlaymatch.classList.add("hidden");
-
-  console.log(match);
-  matchCard();
-  console.log(matchs);
+//   document.querySelector('input[name="position"]').forEach(radio => { 
+//     radio.checked = false;
+//   });
 }
 
 submitmatch.addEventListener("click", validationmatch);
