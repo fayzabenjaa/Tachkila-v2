@@ -51,8 +51,13 @@
         </div>
     </header>
 
-    <div class="text-white">
-        
+    <div class="text-white grid ">
+        <aside class="h-full w-full bg-slate-800">
+            <div class="bg-gray-500  rounded-2xl p-3 w-25 ml-auto justify-end m-2">
+                    <p id="playersn" class="text-left">0 joueur(s)</p>
+                </div>
+                <section  class="player-card grid grid-cols-1 gap-1 "></section>
+        </aside>
         <main class="col-span-full lg:col-start-2 lg:col-end-5 bg-[#0F172A] p-3 sm:p-5 lg:p-8 min-w-0">
             <div class="overflow-x-auto">
                 <section class="grid grid-cols-12 gap-1 sm:gap-2 min-h-[480px] sm:min-w-0 w-full">
@@ -223,6 +228,8 @@
 
     </div>
 </body>
-<script src="joueurs.js" defer></script>
+<script type="module" src="interface.js" defer></script>
+<script type="module" src="joueurs.js" defer></script>
+<script type="module" src="validation.js" defer></script>
 
 </html>

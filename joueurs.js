@@ -7,7 +7,7 @@ function updateplayernumber() {
   allplayers.innerText = `${inputArray.length} joueur(s)`;
 }
 export function playerCard(players = inputArray) {
-  const playerContainer = document.querySelector("#player-card");
+  const playerContainer = document.querySelector(".player-card");
   playerContainer.innerHTML = ``;
   const roles = {
     Gardien: {
