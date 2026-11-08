@@ -1,6 +1,6 @@
 const Ajoutermatchs = document.querySelector('#Ajoutermatchs');
-let matchs = [];
-
+import { getMatchs, saveMatchs } from "./stockage.js";
+let matchs = getMatchs();
 
 
 export function matchCard () {
@@ -20,6 +20,7 @@ export function matchCard () {
     local: local,
   }
   matchs.push(match)
+  saveMatchs(matchs);
   displaycard();
 }
 
@@ -28,7 +29,7 @@ function displaycard () {
     matchCard.innerHTML = ``;
 
     matchs.forEach((match)=> {
-    matchCard.innerHTML += ` <div
+      matchCard.innerHTML += ` <div
         class="flex m-1 bg-slate-800 border-slate-700 rounded-2xl mt-4 text-white"
       >
         <article class="flex justify-start">
@@ -71,7 +72,7 @@ function displaycard () {
         <article class="flex ml-auto justify-end">
           <div class="max-sm:hidden flex flex-col justify-center gap-4 items-center">
             <div>
-              <button id="matchScore" class="bg-blue-600 rounded-2xl p-2">Saisir le score</button>
+              <button id="${match.id}" class="scorebtn bg-blue-600 rounded-2xl p-2">Saisir le score</button>
             </div>
             <a href="composition.html" class="bg-slate-700 p-2 rounded-2xl"
               >voir la composition</a
@@ -93,7 +94,17 @@ function deletMatchs () {
       const matchId = Number(this.dataset.id);
 
       matchs = matchs.filter((match) => match.id !== matchId);
+      saveMatchs(matchs);
       displaycard();
     });
   });
 }
+
+// function score () {
+//   document.querySelectorAll(".scorebtn").forEach((btn) => {
+//     btn.addEventListener("click", function () {
+//       const matchId = Number(this.dataset.id);
+
+//     })
+// }
+
