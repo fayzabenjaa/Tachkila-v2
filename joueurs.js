@@ -98,32 +98,34 @@ export function playerCard(players = inputArray) {
   captainplayer();
   updateplayernumber(players);
 
-  pagination()
+  pagination();
 }
 //pagination
 function pagination() {
   const totalPage = Math.ceil(displayedPlayers.length / playerPerPage);
-  document.querySelector("#pageNumber").textContent = `${currentPage}/${totalPage}`;
+  document.querySelector("#pageNumber").textContent =
+    `${currentPage}/${totalPage}`;
 
   document.querySelector("#prePage").disabled = currentPage === 1;
 
-  document.querySelector("#nextPage").disabled = currentPage === totalPage || totalPage === 0;
+  document.querySelector("#nextPage").disabled =
+    currentPage === totalPage || totalPage === 0;
 }
 
-document.querySelector("#nextPage").addEventListener("click", ()=> {
+document.querySelector("#nextPage").addEventListener("click", () => {
   const totalPage = Math.ceil(displayedPlayers.length / playerPerPage);
-  if(currentPage <totalPage) {
+  if (currentPage < totalPage) {
     currentPage++;
     playerCard(displayedPlayers);
   }
 });
 
-document.querySelector("#prePage").addEventListener("click", ()=> {
-  if(currentPage > 1) {
+document.querySelector("#prePage").addEventListener("click", () => {
+  if (currentPage > 1) {
     currentPage--;
     playerCard(displayedPlayers);
   }
-})
+});
 // delete button
 function deletplayer() {
   document.querySelectorAll(".delete-btn").forEach((btn) => {
@@ -139,34 +141,67 @@ function deletplayer() {
 }
 //edit button
 let indexedit = null;
+
 function editplayer() {
   document.querySelectorAll(".edit-btn").forEach((btn) => {
     btn.addEventListener("click", function () {
-
       document.querySelector("#bgblur").classList.remove("hidden");
 
       const editConfirm = document.querySelector("#confirm");
-      editConfirm.textContent = "Enregistre";
+      editConfirm.textContent = "Enregistrer";
 
       const editId = Number(this.dataset.id);
 
-      const selectedplayer = inputArray.find((player) => player.id == editId);
+      const selectedplayer = inputArray.find(
+        (player) => player.id === editId
+      );
 
-      const player = document.querySelector('#player');
-      const number = document.querySelector('#number');
+      const player = document.querySelector("#player");
+      const number = document.querySelector("#number");
+      const age = document.querySelector("#agenumber");
+      const status = document.querySelector("#status");
 
-        player.value = selectedplayer.nom;
-        number.value = selectedplayer.number;
+      player.value = selectedplayer.name;
+      number.value = selectedplayer.number;
+      age.value = selectedplayer.age;
+      status.value = selectedplayer.status;
 
-        indexedit = editId;
+      document.querySelectorAll('input[name="position"]').forEach((radio) => {
+        radio.checked = radio.value === selectedplayer.role;
+      });
+
+      indexedit = editId;
+
+      editConfirm.onclick = (event) => {
+        event.preventDefault();
 
         const newPlayer = player.value;
-            const newNumber = number.value;
-            console.log(inputArray)
-        editConfirm.addEventListener('click', (event)=> {
-            event.preventDefault();
-            
-        })
+        const newNumber = number.value;
+        const newAge = age.value;
+        const newStatus = status.value;
+
+        const newRole = document.querySelector(
+          'input[name="position"]:checked'
+        )?.value;
+
+        const selectedplayer = inputArray.find(
+          (player) => player.id === indexedit
+        );
+
+        selectedplayer.name = newPlayer;
+        selectedplayer.number = newNumber;
+        selectedplayer.age = newAge;
+        selectedplayer.status = newStatus;
+        selectedplayer.role = newRole;
+
+        savePlayer(inputArray);
+
+        indexedit = null;
+
+        document.querySelector("#bgblur").classList.add("hidden");
+
+        playerCard(displayedPlayers);
+      };
     });
   });
 }
@@ -199,18 +234,19 @@ const allmil = document.querySelector("#allmil");
 const allatt = document.querySelector("#allatt");
 
 function filterPlayers(position) {
-
-    if (position === 'tous') {
-        displayedPlayers = inputArray;
-    }else {
-        displayedPlayers = inputArray.filter((player)=> player.role === position)
-    }
-    console.log(
-        "selected position:", position,
-        "filtered players:", filterPlayers.length,
-    );
-    currentPage = 1;
-    playerCard(displayedPlayers);
+  if (position === "tous") {
+    displayedPlayers = inputArray;
+  } else {
+    displayedPlayers = inputArray.filter((player) => player.role === position);
+  }
+  console.log(
+    "selected position:",
+    position,
+    "filtered players:",
+    filterPlayers.length,
+  );
+  currentPage = 1;
+  playerCard(displayedPlayers);
 }
 
 function allplayersf() {
@@ -254,7 +290,6 @@ function allattf() {
   filterPlayers("Attaquant");
 }
 
-
 allplayers.addEventListener("click", allplayersf);
 allgb.addEventListener("click", allgbf);
 alldef.addEventListener("click", alldeff);
@@ -263,14 +298,14 @@ allatt.addEventListener("click", allattf);
 
 const search = document.querySelector("#search");
 
-search.addEventListener('input', ()=> {
-    const recherche = search.value.toLowerCase();
+search.addEventListener("input", () => {
+  const recherche = search.value.toLowerCase();
 
-    displayedPlayers = inputArray.filter((player)=> {
-        return player.name.toLowerCase().includes(recherche);
-    })
-    currentPage = 1;
-    playerCard(displayedPlayers);
-})
+  displayedPlayers = inputArray.filter((player) => {
+    return player.name.toLowerCase().includes(recherche);
+  });
+  currentPage = 1;
+  playerCard(displayedPlayers);
+});
 
 playerCard();
