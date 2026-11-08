@@ -1,6 +1,10 @@
 import { userPlayers, savePlayer } from "./stockage.js";
 let inputArray = userPlayers();
 
+let currentPage = 1;
+const playerPerPage = 8;
+let displayedPlayers = inputArray;
+
 function updateplayernumber() {
   console.log(document.querySelectorAll(".positionSelect").length);
   let allplayers = document.querySelector("#playersn");
@@ -32,7 +36,12 @@ export function playerCard(players = inputArray) {
     },
   };
 
-  players.forEach((player, i) => {
+  const start = (currentPage - 1) * playerPerPage;
+  const end = start + playerPerPage;
+
+  const playersToDisplay = players.slice(start, end);
+
+  playersToDisplay.forEach((player, i) => {
     const role = roles[player.role];
 
     if (!role) {
@@ -88,7 +97,33 @@ export function playerCard(players = inputArray) {
   editplayer();
   captainplayer();
   updateplayernumber(players);
+
+  pagination()
 }
+//pagination
+function pagination() {
+  const totalPage = Math.ceil(displayedPlayers.length / playersPerPage);
+  document.querySelector("#pageNumber").textContent = `${currentPage}/${totalPage}`;
+
+  document.querySelector("#prePage").disabled = currentPage === 1;
+
+  document.querySelector("#nextPage").disabled = currentPage === totalPage || totalPage === 0;
+}
+
+document.querySelector("#nextPage").addEventListener("click", ()=> {
+  const totalPage = Math.ceil(displayedPlayers.length / playersPerPage);
+  if(currentPage <totalPage) {
+    currentPage++;
+    playerCard(displayedPlayers);
+  }
+});
+
+document.querySelector("#prePage").addEventListener("click", ()=> {
+  if(currentPage > 1) {
+    currentPage--;
+    playerCard(displayedPlayers);
+  }
+})
 // delete button
 function deletplayer() {
   document.querySelectorAll(".delete-btn").forEach((btn) => {
