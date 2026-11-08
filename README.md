@@ -51,4 +51,4 @@ Le projet TACHKILA V2 est une application web permettant de gérer l'effectif d'
 
 ## 6. Présentation Canva
 
-- **Ma présentation** : https://canva.link/8xp54pwb52kwcse
+- **Ma présentation** : https://canva.link/q4x9caazb33j9y8
