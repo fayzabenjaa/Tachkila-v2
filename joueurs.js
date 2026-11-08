@@ -102,7 +102,7 @@ export function playerCard(players = inputArray) {
 }
 //pagination
 function pagination() {
-  const totalPage = Math.ceil(displayedPlayers.length / playersPerPage);
+  const totalPage = Math.ceil(displayedPlayers.length / playerPerPage);
   document.querySelector("#pageNumber").textContent = `${currentPage}/${totalPage}`;
 
   document.querySelector("#prePage").disabled = currentPage === 1;
@@ -111,7 +111,7 @@ function pagination() {
 }
 
 document.querySelector("#nextPage").addEventListener("click", ()=> {
-  const totalPage = Math.ceil(displayedPlayers.length / playersPerPage);
+  const totalPage = Math.ceil(displayedPlayers.length / playerPerPage);
   if(currentPage <totalPage) {
     currentPage++;
     playerCard(displayedPlayers);
@@ -199,18 +199,18 @@ const allmil = document.querySelector("#allmil");
 const allatt = document.querySelector("#allatt");
 
 function filterPlayers(position) {
-    let filterPlayers = []
+
     if (position === 'tous') {
-        filterPlayers = inputArray;
-        playerCard();
+        displayedPlayers = inputArray;
     }else {
-        filterPlayers = inputArray.filter((player)=> player.role === position)
-        playerCard(filterPlayers);
+        displayedPlayers = inputArray.filter((player)=> player.role === position)
     }
     console.log(
         "selected position:", position,
         "filtered players:", filterPlayers.length,
     );
+    currentPage = 1;
+    playerCard(displayedPlayers);
 }
 
 function allplayersf() {
@@ -265,10 +265,12 @@ const search = document.querySelector("#search");
 
 search.addEventListener('input', ()=> {
     const recherche = search.value.toLowerCase();
-    const results = inputArray.filter((player)=> {
+
+    displayedPlayers = inputArray.filter((player)=> {
         return player.name.toLowerCase().includes(recherche);
     })
-    playerCard(results);
+    currentPage = 1;
+    playerCard(displayedPlayers);
 })
 
 playerCard();
